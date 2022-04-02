@@ -4,7 +4,7 @@ function TodoListItem(props) {
 
     
     return(
-        <li> {props.todoList} </li>
+        <li> {props.todo.title} </li>
     )
 }
 
