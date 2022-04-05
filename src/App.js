@@ -4,8 +4,10 @@ import AddTodoForm from './AddTodoForm';
 import { useState } from 'react';
 
 function App() {
-  const [newTodo, setNewTodo]= useState()
+  const [newTodo, setNewTodo]= useState('')
+  console.log(newTodo)
 
+  
   return (
     <div>
       <h1>Todo List</h1>
