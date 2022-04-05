@@ -5,13 +5,11 @@ import { useState } from 'react';
 
 function App() {
   const [newTodo, setNewTodo]= useState('')
-  console.log(newTodo)
-
   
   return (
     <div>
       <h1>Todo List</h1>
-      <AddTodoForm />
+      <AddTodoForm onAddTodo= {setNewTodo}/>
       <p>{newTodo}</p>
       <TodoList /> 
     </div> 

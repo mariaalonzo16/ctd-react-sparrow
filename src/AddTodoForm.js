@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddTodoForm() {
+function AddTodoForm(props) {
 
     const handleAddTodo = (e) => {
         e.preventDefault();
@@ -9,12 +9,8 @@ function AddTodoForm() {
 
         console.log(todoTitle); 
 
-      
+    
     }
-
-    // const onAddTodo = () => {
-    //     console.log(onAddTodo)
-    // }
   
     
     return(
