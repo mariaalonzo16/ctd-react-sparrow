@@ -7,8 +7,7 @@ function AddTodoForm(props) {
 
         const todoTitle = e.target.title.value;
 
-        console.log(todoTitle); 
-
+        props.onAddTodo(todoTitle)
     
     }
   

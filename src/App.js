@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <h1>Todo List</h1>
-      <AddTodoForm onAddTodo= {setNewTodo}/>
+      <AddTodoForm onAddTodo={setNewTodo}/>
       <p>{newTodo}</p>
       <TodoList /> 
     </div> 
