@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function AddTodoForm(props) {
 
-    console.log(props)
+    
 
     const [todoTitle, setTodoTitle] = useState('')
     
@@ -19,7 +19,11 @@ function AddTodoForm(props) {
     const handleAddTodo = (e) => {
         e.preventDefault();
         setTodoTitle('');
-       
+
+       props.onAddTodo({
+           title: todoTitle,
+           id: Date.now()
+       });
         
     }
   

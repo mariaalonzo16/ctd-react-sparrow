@@ -7,17 +7,20 @@ import '../src/App.css'
 function App() {
 
   //equals an empty string
-  const [ newTodo , setNewTodo] = useState('React');
+  const [ newTodo , setNewTodo] = useState('');
 
   //equals an empty array
   const [todoList, setTodoList] = useState([]);
 
+  let addTodo = ({newTodo}) => {
+    setTodoList(...todoList, ...newTodo)
+  }
 
   return (
     <div>
       <h1>Todo List</h1>
       <main>
-        <AddTodoForm onAddTodo={newTodo}/>
+        <AddTodoForm />
         <TodoList todoList={todoList}/>
       </main>
     </div> 
