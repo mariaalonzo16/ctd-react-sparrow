@@ -7,10 +7,11 @@ import '../src/App.css'
 function App() {
 
   //equals an empty string
-  const [newTodo, setNewTodo] = useState('')
+  const [ newTodo , setNewTodo] = useState('React');
 
   //equals an empty array
-  const [todoList, setTodoList] = useState([])
+  const [todoList, setTodoList] = useState([]);
+
 
   return (
     <div>

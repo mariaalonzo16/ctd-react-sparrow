@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 function AddTodoForm(props) {
 
+    console.log(props)
+
     const [todoTitle, setTodoTitle] = useState('')
     
     //sets the current state of the input field
@@ -9,12 +11,16 @@ function AddTodoForm(props) {
         const newTodoTitle = e.target.value;
 
         setTodoTitle(newTodoTitle);
+        console.log(newTodoTitle)
+        
     }
 
     //After the form gets submitted we set our form to an empty array
     const handleAddTodo = (e) => {
         e.preventDefault();
         setTodoTitle('');
+       
+        
     }
   
     return(
