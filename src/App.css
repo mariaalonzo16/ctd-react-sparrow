@@ -3,7 +3,8 @@ h1{
 }
 
 main{
-  margin: 25px;
-  max-width: 450px;
-  height: 200px;
+  max-width: 500px;
+  max-inline-size: fit-content;
+  margin: auto;
+  text-align: center;
 }

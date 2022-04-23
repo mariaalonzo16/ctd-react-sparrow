@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TodoList from './TodoList';
 import AddTodoForm from './AddTodoForm';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../src/App.css'
 
 function App() {
@@ -10,11 +10,17 @@ function App() {
   const [ newTodo , setNewTodo] = useState('');
 
   //equals an empty array
+  // const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('savedTodoList')));
   const [todoList, setTodoList] = useState([]);
 
   let addTodo = (newTodo) => {
     setTodoList([...todoList, newTodo])
   }
+
+  useEffect(() => {
+    localStorage.setItem('savedTodoList', JSON.stringify(todoList));
+  }, [todoList])
+  
 
   return (
     <div>
