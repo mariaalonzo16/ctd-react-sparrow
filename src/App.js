@@ -4,23 +4,29 @@ import AddTodoForm from './AddTodoForm';
 import { useState, useEffect } from 'react';
 import '../src/App.css'
 
-function App() {
+function useSemiPersistentState() {
 
-  //equals an empty string
-  const [ newTodo , setNewTodo] = useState('');
-
-  //equals an empty array
-  // const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('savedTodoList')));
-  const [todoList, setTodoList] = useState([]);
-
-  let addTodo = (newTodo) => {
-    setTodoList([...todoList, newTodo])
-  }
+  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('savedTodoList')));
 
   useEffect(() => {
-    localStorage.setItem('savedTodoList', JSON.stringify(todoList));
+      localStorage.setItem('savedTodoList', JSON.stringify(todoList));
   }, [todoList])
+
   
+
+  return[todoList,setTodoList]
+}
+
+
+function App() {
+
+  // const [ newTodo , setNewTodo] = useState('');
+
+  const [todoList, setTodoList] = useSemiPersistentState();
+
+  const addTodo = (newTodo) => {
+    setTodoList([...todoList, newTodo])
+  }
 
   return (
     <div>
