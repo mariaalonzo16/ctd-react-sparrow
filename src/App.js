@@ -6,7 +6,7 @@ import '../src/App.css'
 
 function useSemiPersistentState() {
 
-  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('savedTodoList')));
+  const [todoList, setTodoList] = useState(JSON.parse(localStorage.getItem('savedTodoList')) || []);
 
   useEffect(() => {
       localStorage.setItem('savedTodoList', JSON.stringify(todoList));
@@ -29,13 +29,13 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       <h1>Todo List</h1>
       <main>
         <AddTodoForm onAddTodo={addTodo}/>
         <TodoList todoList={todoList}/>
       </main>
-    </div> 
+    </> 
   );
 }
 
