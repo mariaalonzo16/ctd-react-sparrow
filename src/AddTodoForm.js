@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import InputWithLabel from "./InputWithLable";
 
 function AddTodoForm(props) {
+    
+    const [todoTitle, setTodoTitle] = useState('');
 
-    const [todoTitle, setTodoTitle] = useState('')
     
     //sets the current state of the input field
     const handleTitleChange = (e) => {
         const newTodoTitle = e.target.value;
-
+        console.log(newTodoTitle)
         setTodoTitle(newTodoTitle);
     }
 
@@ -22,10 +23,10 @@ function AddTodoForm(props) {
            id: Date.now()
        }); 
     }
-  
+
     return(
         <form onSubmit={handleAddTodo}>
-            <InputWithLabel onChange={handleTitleChange} value={todoTitle} label="Title"/>
+            <InputWithLabel titleChange={handleTitleChange} title={todoTitle}>Title</InputWithLabel>
             <button>Submit</button>
         </form>
     );
