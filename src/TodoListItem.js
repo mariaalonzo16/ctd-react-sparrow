@@ -5,7 +5,7 @@ function TodoListItem(props) {
     return(
         <>
         <li> {props.todo.title} </li>
-        <button type="button">Remove</button>
+        <button type="button" onClick={props.onRemoveTodo}>Remove</button>
         </>
     )
 }
