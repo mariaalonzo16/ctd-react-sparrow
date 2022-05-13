@@ -5,7 +5,7 @@ function TodoList (props) {
   
   return(
       <ul>
-          {props.todoList.map((todo) => <TodoListItem key={todo.id} todo={todo} onRemoveTodo={props.handleRemoveTodo}/>)}
+          {props.todoList.map((todo) => <TodoListItem key={todo.id} todo={todo} onRemoveTodo={props.onRemoveTodo}/>)}
       </ul> 
   );
 }

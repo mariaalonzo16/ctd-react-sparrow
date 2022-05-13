@@ -31,11 +31,11 @@ function App() {
   }
 
   const handleRemoveTodo = (id) => {
-    todoList.filter(id)
-    setTodoList(todoList)
-    console.log(id)
+    const removeTodo = todoList.filter((item) => item.id !== id)
+    
+    setTodoList(removeTodo)
   }
-
+  console.log(handleRemoveTodo)
   return (
     <>
       <h1>Todo List</h1>
